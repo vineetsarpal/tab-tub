@@ -29,7 +29,7 @@ A Chrome extension that lets you easily bookmark your current browser tab / cust
 1. **Clone or Download the Repository**  
    - Clone the repo:
      ```sh
-     git clone https://github.com/your-username/your-repo-name.git
+     git clone https://github.com/vineetsarpal/pin-my-tab.git
      ```
    - Or download the ZIP file and extract it
 
