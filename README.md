@@ -5,7 +5,7 @@ A Chrome extension that lets you easily bookmark your current browser tab / cust
 
 ## Preview
 
-![Screenshot of Chrome Extension](./app-screenshot.png)
+![Screenshot of Chrome Extension](./assets/app-screenshot.png)
 
 ## Features
 
