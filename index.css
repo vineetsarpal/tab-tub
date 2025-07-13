@@ -1,3 +1,13 @@
+
+.input-del-row{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+.input-del-row button {
+    flex: 1;
+    width: auto;
+}
 body {
     margin: 0;
     padding: 10px;
@@ -20,6 +30,31 @@ button {
     border: 1px solid black;
     font-weight: bold;
     cursor: pointer;
+}
+
+#pin-tab-btn {
+    width: 100%;
+    display: block;
+    margin-bottom: 4px;
+}
+
+ .or-divider {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 8px 0;
+}
+
+.or-divider .line {
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+}
+
+.or-divider .or-text {
+    margin: 0 16px;
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 #delete-all-btn {

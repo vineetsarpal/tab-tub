@@ -39,10 +39,12 @@ pinTabBtn.addEventListener("click", function(){
     })
 })
 
-deleteAllBtn.addEventListener("dblclick", function() {
-    localStorage.clear()
-    myTabs = []
-    render(myTabs)
+deleteAllBtn.addEventListener("click", function() {
+    if (confirm("Are you sure you want to delete all tabs?")) {
+        localStorage.clear()
+        myTabs = []
+        render(myTabs)
+    }
 })
 
 function render(tabs) {
