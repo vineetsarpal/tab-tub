@@ -1,6 +1,6 @@
 {
-  "name": "leads-tracker-chrome-ext",
-  "description": "https://scrimba.com/learn-javascript-c0v/~056",
+  "name": "tab-tub",
+  "description": "Chrome extension to bookmark tabs easily",
   "scripts": {
     "start": "vite",
     "dev": "vite",

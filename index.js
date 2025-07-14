@@ -1,10 +1,8 @@
 let myTabs = []
 
-const inputEl = document.getElementById("input-el")
-const inputBtn = document.getElementById("input-btn")
+const dropTabBtn = document.getElementById("drop-tab-btn")
+const emptyTubBtn = document.getElementById("empty-tub-btn")
 const ulEl = document.getElementById("ul-el")
-const deleteAllBtn = document.getElementById("delete-all-btn")
-const pinTabBtn = document.getElementById("pin-tab-btn")
 
 const tabsFromLocalStorage = JSON.parse(localStorage.getItem("myTabs"))
 
@@ -13,24 +11,7 @@ if (tabsFromLocalStorage) {
     render(myTabs)
 }
 
-inputBtn.addEventListener("click", function() {
-    const tabID = Date.now().toString()
-    let userInput = inputEl.value
-    if (!userInput.startsWith("http")) {
-        userInput = "https://" + userInput
-    }
-    if(!userInput.includes(".")) {
-        alert("Please enter a valid URL")
-        return
-    }
-    myTabs.push({ tabID, tabURL: userInput })
-    localStorage.setItem("myTabs", JSON.stringify(myTabs) )
-
-    inputEl.value = ""
-    render(myTabs)
-})
-
-pinTabBtn.addEventListener("click", function(){
+dropTabBtn.addEventListener("click", function(){
     const tabID = Date.now().toString()  
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         myTabs.push({ tabID, tabURL: tabs[0].url })
@@ -39,8 +20,8 @@ pinTabBtn.addEventListener("click", function(){
     })
 })
 
-deleteAllBtn.addEventListener("click", function() {
-    if (confirm("Are you sure you want to delete all tabs?")) {
+emptyTubBtn.addEventListener("click", function() {
+    if (confirm("Are you sure you want to empty the tub?")) {
         localStorage.clear()
         myTabs = []
         render(myTabs)
