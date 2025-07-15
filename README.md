@@ -8,14 +8,14 @@ Effortlessly manage your browser tabs with TabTub – a simple yet powerful Chro
 *   **Intuitive Management:** Easily remove individual tabs or clear your entire tub with a single click.
 *   **Cross-Device Sync:** Your saved tabs automatically sync across all Chrome browsers where you're signed in, thanks to `chrome.storage.sync`.
 *   **Visual Tub:** A clear visual representation of your saved tabs, making organization straightforward.
-*   **Duplicates Prevention:** Avoid clutter; the "Drop All Tabs" feature intelligently prevents adding tabs that are already in your tub.
+*   **Duplicates Prevention:** Avoid clutter; the "Tub 'em All" feature intelligently prevents adding tabs that are already in your tub.
 
 ## 💡 Usage
 
 TabTub provides a streamlined way to keep your browsing organized:
 
-*   **Drop Current Tab:** Click this button to save the tab you are currently viewing into your tub.
-*   **Drop All Tabs:** Save all tabs from your current browser window into the tub. Duplicate URLs are automatically ignored.
+*   **Tub It:** Click this button to save the tab you are currently viewing into your tub.
+*   **Tub 'em All:** Save all tabs from your current browser window into the tub. Duplicate URLs are automatically ignored.
 *   **Empty Tub:** Clear all saved tabs from your tub. A confirmation prompt ensures you don't accidentally delete your collection.
 *   **Remove Individual Tab (X):** Each tab in the tub has a small 'X' button to remove it individually.
 
