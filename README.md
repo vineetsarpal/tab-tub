@@ -1,6 +1,6 @@
 # Tab Tub
 
-A Chrome extension that lets you easily bookmark your current browser tab / custom URLs, helping you organize important links for quick access.
+A Chrome extension that lets you easily bookmark your current browser tabs, helping you organize important links for quick access.
 
 
 ## Preview
@@ -14,11 +14,9 @@ A Chrome extension that lets you easily bookmark your current browser tab / cust
 - Improve productivity by keeping important tabs organized
 
 ## Usage
-- Pin My Tab: Pin the current tab you are on
-- Pin My Input: Provide a manual URL in the input box to pin that URL
-- Delete All: Remove all pinned links
-- X: Remove the individual link
-
+- Drop Current Tab: Drop the current Tab to the Tub
+- Empty Tub: Remove all Tabs from the Tub
+- X: Remove the individual tab
 
 ## Installation
 
@@ -27,7 +25,7 @@ A Chrome extension that lets you easily bookmark your current browser tab / cust
 1. **Clone or Download the Repository**  
    - Clone the repo:
      ```sh
-     git clone https://github.com/vineetsarpal/pin-my-tab.git
+     git clone https://github.com/vineetsarpal/tab-tub.git
      ```
    - Or download the ZIP file and extract it
 
