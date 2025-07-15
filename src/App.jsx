@@ -84,20 +84,20 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <img src="/icons/icon_48x48.png" alt="Tab Tub" className="logo" />
-        <h1>Tab Tub</h1>
+        <img src="/icons/icon_48x48.png" alt="TabTub" className="logo" />
+        <h1>TabTub</h1>
       </header>
       <div className="top-buttons">
         <button onClick={dropTab} className="action-button full-width">Drop Current Tab</button>
       </div>
       <div className="button-group split-buttons">
-        <button onClick={dropAllTabs} className="action-button">Drop All Tabs</button>
+        <button onClick={dropAllTabs} className="action-button">Drop ALL Tabs</button>
         <button onClick={emptyTub} className="action-button secondary">Empty Tub</button>
       </div>
       <div className="tub-wrapper">
         <main className="tub-container">
         {tabs.length === 0 ? (
-          <p className="empty-message">Your tub is empty!</p>
+          <p className="empty-message">Your Tub is empty!</p>
           ) : (
           <ul className="tab-list">
             {tabs.map(tab => (

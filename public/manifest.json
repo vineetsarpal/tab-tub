@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Tab Tub",
+    "name": "TabTub",
     "description": "A Chrome extension to bookmark tabs easily",
     "version": "1.0",
     "icons": {

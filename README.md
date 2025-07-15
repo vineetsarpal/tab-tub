@@ -1,6 +1,6 @@
-# Tab Tub
+# TabTub
 
-Effortlessly manage your browser tabs with Tab Tub – a simple yet powerful Chrome extension designed to help you organize and revisit important links with ease.
+Effortlessly manage your browser tabs with TabTub – a simple yet powerful Chrome extension designed to help you organize and revisit important links with ease.
 
 ## 🚀 Features
 
@@ -12,7 +12,7 @@ Effortlessly manage your browser tabs with Tab Tub – a simple yet powerful Chr
 
 ## 💡 Usage
 
-Tab Tub provides a streamlined way to keep your browsing organized:
+TabTub provides a streamlined way to keep your browsing organized:
 
 *   **Drop Current Tab:** Click this button to save the tab you are currently viewing into your tub.
 *   **Drop All Tabs:** Save all tabs from your current browser window into the tub. Duplicate URLs are automatically ignored.
@@ -21,13 +21,13 @@ Tab Tub provides a streamlined way to keep your browsing organized:
 
 ## 📸 Preview
 
-![Tab Tub Screenshot](images/app_screenshot.png)
+![TabTub Screenshot](images/app_screenshot.png)
 
 ## ⚙️ Installation
 
 ### Manual Installation (Developer Mode)
 
-To get Tab Tub running in your Chrome browser:
+To get TabTub running in your Chrome browser:
 
 1.  **Clone or Download:**
     *   **Clone the repository:**
@@ -44,17 +44,17 @@ To get Tab Tub running in your Chrome browser:
 
 4.  **Load Unpacked Extension:**
     *   Click the **Load unpacked** button that appears.
-    *   Browse to and select the directory where you cloned or extracted the Tab Tub files.
+    *   Browse to and select the directory where you cloned or extracted the TabTub files.
 
 5.  **Pin to Toolbar (Optional):**
-    *   Once loaded, the Tab Tub icon should appear in your browser's toolbar. If not, click the puzzle piece icon (Extensions) and pin Tab Tub for easy access.
+    *   Once loaded, the TabTub icon should appear in your browser's toolbar. If not, click the puzzle piece icon (Extensions) and pin TabTub for easy access.
 
 ### Keyboard Shortcut (Optional)
 
-You can set a custom keyboard shortcut to quickly open the Tab Tub popup:
+You can set a custom keyboard shortcut to quickly open the TabTub popup:
 
 1.  Go to `chrome://extensions/shortcuts` in your browser.
-2.  Find "Tab Tub" in the list.
+2.  Find "TabTub" in the list.
 3.  Click the pencil icon next to "Activate the extension" and assign your preferred shortcut (e.g., `Ctrl+Shift+Y`).
 
 ## 📄 License
