@@ -1,44 +1,63 @@
 # Tab Tub
 
-A Chrome extension that lets you easily bookmark your current browser tabs, helping you organize important links for quick access.
+**Effortlessly manage your browser tabs with Tab Tub – a simple yet powerful Chrome extension designed to help you organize and revisit important links with ease.**
 
+## 🚀 Features
 
-## Preview
+*   **Quick Tab Capture:** Instantly save your current active tab or all open tabs to your personal "tub."
+*   **Intuitive Management:** Easily remove individual tabs or clear your entire tub with a single click.
+*   **Cross-Device Sync:** Your saved tabs automatically sync across all Chrome browsers where you're signed in, thanks to `chrome.storage.sync`.
+*   **Visual Tub:** A clear visual representation of your saved tabs, making organization straightforward.
+*   **Duplicate Prevention:** Avoid clutter; the "Drop All Tabs" feature intelligently prevents adding tabs that are already in your tub.
 
-![Screenshot of Chrome Extension](./assets/app-screenshot.png)
+## 💡 Usage
 
-## Features
+Tab Tub provides a streamlined way to keep your browsing organized:
 
-- Quickly save, remove, and manage tabs with a single click
-- Manage multiple tabs effortlessly
-- Improve productivity by keeping important tabs organized
+*   **Drop Current Tab:** Click this button to save the tab you are currently viewing into your tub.
+*   **Drop All Tabs:** Save all tabs from your current browser window into the tub. Duplicate URLs are automatically ignored.
+*   **Empty Tub:** Clear all saved tabs from your tub. A confirmation prompt ensures you don't accidentally delete your collection.
+*   **Remove Individual Tab (X):** Each tab in the tub has a small 'X' button to remove it individually.
 
-## Usage
-- Drop Current Tab: Drop the current Tab to the Tub
-- Empty Tub: Remove all Tabs from the Tub
-- X: Remove the individual tab
+## 📸 Preview
 
-## Installation
+![Tab Tub Screenshot](images/app_screenshot.png)
+*(Place your screenshot here. Ensure the path `images/app_screenshot.png` is correct.)*
+
+## ⚙️ Installation
 
 ### Manual Installation (Developer Mode)
 
-1. **Clone or Download the Repository**  
-   - Clone the repo:
-     ```sh
-     git clone https://github.com/vineetsarpal/tab-tub.git
-     ```
-   - Or download the ZIP file and extract it
+To get Tab Tub running in your Chrome browser:
 
-2. **Open Chrome and Navigate to Extensions**  
-   - Go to `chrome://extensions/` in your browser
-   - Enable **Developer mode** (top right corner)
+1.  **Clone or Download:**
+    *   **Clone the repository:**
+        ```bash
+        git clone https://github.com/vineetsarpal/tab-tub.git
+        ```
+    *   **Alternatively, download** the ZIP file and extract its contents to a local folder.
 
-3. **Load Unpacked Extension**  
-   - Click on **Load unpacked**
-   - Select the directory where you cloned or extracted the extension files
+2.  **Open Chrome Extensions:**
+    *   Navigate to `chrome://extensions/` in your Chrome browser.
 
-4. The extension should now appear in your browser’s toolbar
+3.  **Enable Developer Mode:**
+    *   In the top right corner of the Extensions page, toggle on **Developer mode**.
 
+4.  **Load Unpacked Extension:**
+    *   Click the **Load unpacked** button that appears.
+    *   Browse to and select the directory where you cloned or extracted the Tab Tub files.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+5.  **Pin to Toolbar (Optional):**
+    *   Once loaded, the Tab Tub icon should appear in your browser's toolbar. If not, click the puzzle piece icon (Extensions) and pin Tab Tub for easy access.
+
+### Keyboard Shortcut (Optional)
+
+You can set a custom keyboard shortcut to quickly open the Tab Tub popup:
+
+1.  Go to `chrome://extensions/shortcuts` in your browser.
+2.  Find "Tab Tub" in the list.
+3.  Click the pencil icon next to "Activate the extension" and assign your preferred shortcut (e.g., `Ctrl+Shift+Y`).
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE.md` file for more details.
