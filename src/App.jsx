@@ -88,10 +88,10 @@ function App() {
         <h1>TabTub</h1>
       </header>
       <div className="top-buttons">
-        <button onClick={dropTab} className="action-button full-width">Drop Current Tab</button>
+        <button onClick={dropTab} className="action-button full-width">Tub It</button>
       </div>
       <div className="button-group split-buttons">
-        <button onClick={dropAllTabs} className="action-button">Drop ALL Tabs</button>
+        <button onClick={dropAllTabs} className="action-button">Tub 'em All</button>
         <button onClick={emptyTub} className="action-button secondary">Empty Tub</button>
       </div>
       <div className="tub-wrapper">
