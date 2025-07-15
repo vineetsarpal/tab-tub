@@ -1,6 +1,6 @@
 # Tab Tub
 
-**Effortlessly manage your browser tabs with Tab Tub – a simple yet powerful Chrome extension designed to help you organize and revisit important links with ease.**
+Effortlessly manage your browser tabs with Tab Tub – a simple yet powerful Chrome extension designed to help you organize and revisit important links with ease.
 
 ## 🚀 Features
 
@@ -8,7 +8,7 @@
 *   **Intuitive Management:** Easily remove individual tabs or clear your entire tub with a single click.
 *   **Cross-Device Sync:** Your saved tabs automatically sync across all Chrome browsers where you're signed in, thanks to `chrome.storage.sync`.
 *   **Visual Tub:** A clear visual representation of your saved tabs, making organization straightforward.
-*   **Duplicate Prevention:** Avoid clutter; the "Drop All Tabs" feature intelligently prevents adding tabs that are already in your tub.
+*   **Duplicates Prevention:** Avoid clutter; the "Drop All Tabs" feature intelligently prevents adding tabs that are already in your tub.
 
 ## 💡 Usage
 
@@ -22,7 +22,6 @@ Tab Tub provides a streamlined way to keep your browsing organized:
 ## 📸 Preview
 
 ![Tab Tub Screenshot](images/app_screenshot.png)
-*(Place your screenshot here. Ensure the path `images/app_screenshot.png` is correct.)*
 
 ## ⚙️ Installation
 
