@@ -28,14 +28,33 @@ function App() {
     }
   };
 
-  const emptyTub = () => {
-    if (window.confirm("Are you sure you want to empty the tub?")) {
-      setTabs([]);
+  const dropAllTabs = () => {
+    if (window.chrome && window.chrome.tabs) {
+      chrome.tabs.query({ currentWindow: true }, (chromeTabs) => {
+        const existingUrls = new Set(tabs.map(tab => tab.url));
+        const newTabsToAdd = chromeTabs
+          .map(tab => ({ id: tab.id, url: tab.url, title: tab.title }))
+          .filter(newTab => !existingUrls.has(newTab.url));
+        setTabs([...tabs, ...newTabsToAdd]);
+      });
+    } else {
+      // Fallback for development
+      const newTabs = [
+        { id: Date.now(), url: `https://example.com/${Date.now()}`, title: `Example Tab ${Date.now()}` },
+        { id: Date.now() + 1, url: `https://example.com/${Date.now() + 1}`, title: `Example Tab ${Date.now() + 1}` },
+      ];
+      setTabs([...tabs, ...newTabs]);
     }
   };
 
   const deleteTab = (id) => {
     setTabs(tabs.filter(tab => tab.id !== id));
+  };
+
+  const emptyTub = () => {
+    if (window.confirm("Are you sure you want to empty the tub?")) {
+      setTabs([]);
+    }
   };
 
   return (
@@ -44,14 +63,18 @@ function App() {
         <img src="/icons/icon_48x48.png" alt="Tab Tub" className="logo" />
         <h1>Tab Tub</h1>
       </header>
-      <div className="button-group">
-        <button onClick={dropTab} className="action-button">Drop Current Tab</button>
+      <div className="top-buttons">
+        <button onClick={dropTab} className="action-button full-width">Drop Current Tab</button>
+      </div>
+      <div className="button-group split-buttons">
+        <button onClick={dropAllTabs} className="action-button">Drop All Tabs</button>
         <button onClick={emptyTub} className="action-button secondary">Empty Tub</button>
       </div>
-      <main className="tub-container">
+      <div className="tub-wrapper">
+        <main className="tub-container">
         {tabs.length === 0 ? (
           <p className="empty-message">Your tub is empty!</p>
-        ) : (
+          ) : (
           <ul className="tab-list">
             {tabs.map(tab => (
               <li key={tab.id} className="tab-item">
@@ -66,7 +89,9 @@ function App() {
             ))}
           </ul>
         )}
-      </main>
+        </main>
+      </div>
+      <img src="/icons/tub_only.png" alt="Tub" className="tub-image" />
     </div>
   );
 }

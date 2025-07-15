@@ -26,7 +26,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .logo {
@@ -40,10 +40,52 @@ body {
   margin: 0;
 }
 
-.button-group {
+.action-button.full-width {
+  width: 100%;
+}
+
+.split-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.split-buttons .action-button {
+  width: 49%; /* Slightly less than 50% to account for potential margin/gap */
+}
+
+.tub-wrapper {
+  position: relative;
+  background-color: var(--secondary-bg);
+  border-radius: 15px 15px 50px 50px / 15px 15px 30px 30px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  min-height: 300px;
+  max-height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tub-image {
+  display: block;
+  max-width: 80%;
+  margin: 0.5rem auto;
+  height: auto;
+  opacity: 0.7;
+}
+
+.tub-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.bottom-button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
 .action-button {
@@ -70,13 +112,7 @@ body {
 }
 
 .tub-container {
-  background-color: var(--secondary-bg);
-  border-radius: 15px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  border: 1px solid var(--border-color);
-  min-height: 300px;
-  max-height: 400px;
+  flex-grow: 1;
   overflow-y: auto;
 }
 
