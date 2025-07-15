@@ -1,18 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import './App.css'
 
 function App() {
-  const [tabs, setTabs] = useState([]);
+  const [tabs, setTabs] = useState([])
 
   useEffect(() => {
-    const storedTabs = JSON.parse(localStorage.getItem('tabs'));
-    if (storedTabs) {
-      setTabs(storedTabs);
+    if (window.chrome && window.chrome.storage) {
+      chrome.storage.sync.get(['tabs'], (result) => {
+        if (result.tabs) {
+          setTabs(result.tabs);
+        }
+      });
+
+      const handleStorageChange = (changes, namespace) => {
+        if (namespace === 'sync' && changes.tabs) {
+          setTabs(changes.tabs.newValue);
+        }
+      };
+
+      chrome.storage.sync.onChanged.addListener(handleStorageChange);
+
+      return () => {
+        chrome.storage.sync.onChanged.removeListener(handleStorageChange);
+      };
+    } else {
+      const storedTabs = JSON.parse(localStorage.getItem('tabs'));
+      if (storedTabs) {
+        setTabs(storedTabs);
+      }
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('tabs', JSON.stringify(tabs));
+    if (window.chrome && window.chrome.storage) {
+      chrome.storage.sync.set({ tabs: tabs });
+    } else {
+      localStorage.setItem('tabs', JSON.stringify(tabs));
+    }
   }, [tabs]);
 
   const dropTab = () => {
