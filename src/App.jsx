@@ -1,8 +1,52 @@
-import React, { useState, useEffect } from 'react'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import './App.css';
+
+const SortableItem = ({ id, tab, deleteTab }) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+  } = useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
+  return (
+    <li ref={setNodeRef} style={style} {...attributes} className="tab-item">
+      <span className="drag-handle" {...listeners}>&#x2630;</span>
+      <a href={tab.url} target="_blank" rel="noopener noreferrer" title={tab.url}>
+        <img src={`https://www.google.com/s2/favicons?domain=${tab.url}`} alt="" className="favicon" />
+        <span className="tab-title">{tab.title}</span>
+      </a>
+      <button onClick={() => deleteTab(tab.id)} className="delete-button">
+        &times;
+      </button>
+    </li>
+  );
+};
 
 function App() {
-  const [tabs, setTabs] = useState([])
+  const [tabs, setTabs] = useState([]);
 
   useEffect(() => {
     if (window.chrome && window.chrome.storage) {
@@ -38,6 +82,25 @@ function App() {
       localStorage.setItem('tabs', JSON.stringify(tabs));
     }
   }, [tabs]);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      setTabs((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  };
 
   const dropTab = () => {
     if (window.chrome && window.chrome.tabs) {
@@ -96,23 +159,26 @@ function App() {
       </div>
       <div className="tub-wrapper">
         <main className="tub-container">
-        {tabs.length === 0 ? (
-          <p className="empty-message">Your Tub is empty!</p>
+          {tabs.length === 0 ? (
+            <p className="empty-message">Your Tub is empty!</p>
           ) : (
-          <ul className="tab-list">
-            {tabs.map(tab => (
-              <li key={tab.id} className="tab-item">
-                <a href={tab.url} target="_blank" rel="noopener noreferrer" title={tab.url}>
-                  <img src={`https://www.google.com/s2/favicons?domain=${tab.url}`} alt="" className="favicon"/>
-                  <span className="tab-title">{tab.title}</span>
-                </a>
-                <button onClick={() => deleteTab(tab.id)} className="delete-button">
-                  &times;
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
+              <SortableContext
+                items={tabs}
+                strategy={verticalListSortingStrategy}
+              >
+                <ul className="tab-list">
+                  {tabs.map(tab => (
+                    <SortableItem key={tab.id} id={tab.id} tab={tab} deleteTab={deleteTab} />
+                  ))}
+                </ul>
+              </SortableContext>
+            </DndContext>
+          )}
         </main>
       </div>
       <img src="/icons/tub_only.png" alt="Tub" className="tub-image" />
@@ -121,3 +187,4 @@ function App() {
 }
 
 export default App;
+

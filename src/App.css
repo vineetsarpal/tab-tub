@@ -137,6 +137,12 @@ body {
   transition: background-color 0.2s ease;
 }
 
+.drag-handle {
+  cursor: grab;
+  margin-right: 0.5rem;
+  color: #aaa;
+}
+
 .tab-item:last-child {
   border-bottom: none;
 }
