@@ -55,7 +55,7 @@ You can set a custom keyboard shortcut to quickly open the TabTub popup:
 
 1.  Go to `chrome://extensions/shortcuts` in your browser.
 2.  Find "TabTub" in the list.
-3.  Click the pencil icon next to "Activate the extension" and assign your preferred shortcut (e.g., `Ctrl+Shift+Y`).
+3.  Click the pencil icon next to "Activate the extension" and assign your preferred shortcut (e.g., `Ctrl+Shift+U`).
 
 ## 📄 License
 

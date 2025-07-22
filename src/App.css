@@ -1,10 +1,13 @@
 :root {
-  --primary-bg: #f0f8ff;
-  --secondary-bg: #ffffff;
-  --accent-color: #007bff;
-  --text-color: #333;
-  --border-color: #ddd;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --primary-bg: linear-gradient(to bottom, #0f172a, #134e4a, #0f172a);
+  --secondary-bg: rgba(15, 23, 42, 0.8);
+  --accent-color: linear-gradient(to right, #22d3ee, #14b8a6);
+  --accent-hover: linear-gradient(to right, #0891b2, #0d9488);
+  --text-color: #ffffff;
+  --secondary-text: #cbd5e1;
+  --border-color: rgba(20, 184, 166, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --hover-bg: rgba(20, 184, 166, 0.1);
 }
 
 body {
@@ -14,7 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-bg);
+  background: var(--primary-bg);
 }
 
 .app {
@@ -57,16 +60,17 @@ body {
 
 .tub-wrapper {
   position: relative;
-  background-color: var(--secondary-bg);
+  background: var(--secondary-bg);
   border-radius: 15px 15px 50px 50px / 15px 15px 30px 30px;
   padding: 1rem;
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 8px 20px var(--shadow-color);
   border: 1px solid var(--border-color);
   min-height: 300px;
   max-height: 400px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(10px);
 }
 
 .tub-image {
@@ -94,21 +98,26 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  background-color: var(--accent-color);
+  background: var(--accent-color);
   color: white;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .action-button:hover {
-  background-color: #0056b3;
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3);
 }
 
 .action-button.secondary {
-  background-color: #6c757d;
+  background: linear-gradient(to right, #475569, #64748b);
 }
 
 .action-button.secondary:hover {
-  background-color: #5a6268;
+  background: linear-gradient(to right, #334155, #475569);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.3);
 }
 
 .tub-container {
@@ -118,7 +127,7 @@ body {
 
 .empty-message {
   text-align: center;
-  color: #aaa;
+  color: var(--secondary-text);
   margin-top: 2rem;
   font-style: italic;
 }
@@ -140,7 +149,7 @@ body {
 .drag-handle {
   cursor: grab;
   margin-right: 0.5rem;
-  color: #aaa;
+  color: var(--secondary-text);
 }
 
 .tab-item:last-child {
@@ -148,7 +157,7 @@ body {
 }
 
 .tab-item:hover {
-  background-color: #f9f9f9;
+  background-color: var(--hover-bg);
 }
 
 .tab-item a {

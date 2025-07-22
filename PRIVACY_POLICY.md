@@ -23,4 +23,4 @@ strong passwords and enable two-factor authentication for their Google accounts.
 We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
 
 ## 5. Contact Us
-If you have any questions about this Privacy Policy, please contact us at vince.insanity@gmail.com
+If you have any questions about this Privacy Policy, please contact us.

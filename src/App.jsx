@@ -15,6 +15,7 @@ import {
 } from '@dnd-kit/sortable';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import { playTubIt, playTubAll, playEmptyTub, playDeleteTab } from './sounds';
 import './App.css';
 
 const SortableItem = ({ id, tab, deleteTab }) => {
@@ -38,7 +39,10 @@ const SortableItem = ({ id, tab, deleteTab }) => {
         <img src={`https://www.google.com/s2/favicons?domain=${tab.url}`} alt="" className="favicon" />
         <span className="tab-title">{tab.title}</span>
       </a>
-      <button onClick={() => deleteTab(tab.id)} className="delete-button">
+      <button onClick={() => {
+        playDeleteTab();
+        deleteTab(tab.id);
+      }} className="delete-button">
         &times;
       </button>
     </li>
@@ -103,6 +107,7 @@ function App() {
   };
 
   const dropTab = () => {
+    playTubIt();
     if (window.chrome && window.chrome.tabs) {
       chrome.tabs.query({ active: true, currentWindow: true }, (chromeTabs) => {
         const newTab = { id: Date.now(), url: chromeTabs[0].url, title: chromeTabs[0].title };
@@ -116,6 +121,7 @@ function App() {
   };
 
   const dropAllTabs = () => {
+    playTubAll();
     if (window.chrome && window.chrome.tabs) {
       chrome.tabs.query({ currentWindow: true }, (chromeTabs) => {
         const existingUrls = new Set(tabs.map(tab => tab.url));
@@ -140,6 +146,7 @@ function App() {
 
   const emptyTub = () => {
     if (window.confirm("Are you sure you want to empty the tub?")) {
+      playEmptyTub();
       setTabs([]);
     }
   };
